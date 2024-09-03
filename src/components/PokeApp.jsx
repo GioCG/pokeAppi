@@ -1,22 +1,18 @@
-
-
 import { usePoke } from "../hooks/usePoke"
 import { ContainerPoke } from "./ContainerPoke"
-import { SearchPokemon } from "./SearchPokemon"
+import { SearchPoke } from "./SearchPoke"
 
-//functional component
-export const GifApp = () => {
-    const{gifs,handleGetGif,catName} = usePoke()
+// Functional component
+export const PokeApp = () => {
+    const { pokemon, handleGetPokemon, pokemonName, error } = usePoke()
     
     return (
-    //fragment
-    <>
-    { /*props: una propiedad que viaja entre componenetes*/}
-        <SearchPokemon handleGetPoke={handleGetGif}/>
-        <ContainerPoke gifs={gifs} catName={catName}/>     
-          
-        
-    </>
-    
-  )
+        // Fragment
+        <>
+            { /* props: una propiedad que viaja entre componentes */}
+            <SearchPoke handleGetPokemon={handleGetPokemon} />
+            {error && <p>{error}</p>}
+            {pokemon && <ContainerPoke pokemon={pokemon} pokemonName={pokemonName} />}     
+        </>
+    )
 }

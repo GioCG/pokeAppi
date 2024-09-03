@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 import {PokeApp} from "./components/PokeApp"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <React.StrictMode>
     <PokeApp />
-  </StrictMode>,
+  </React.StrictMode>
 )
